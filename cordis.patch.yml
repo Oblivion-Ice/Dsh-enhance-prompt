@@ -1,0 +1,8 @@
+# dsh-enhance-prompt bundle patch.
+#
+# This file is the portable bundle-install form. The same row may instead be
+# appended to the active profile's cordis.patch.yml together with a config
+# block; do not apply both at once.
+- insert:
+    - id: enhance
+      name: 'dsh-enhance-prompt'

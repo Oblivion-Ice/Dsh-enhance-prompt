@@ -1,0 +1,76 @@
+{
+  "name": "dsh-enhance-prompt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DSH desktop plugin: enhance the composer draft with one auxiliary model call.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/",
+    "locale/",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('lib', { recursive: true, force: true })\"",
+    "build": "node build.mjs",
+    "prepare": "node build.mjs",
+    "test": "node build.mjs && node --test \"test/*.test.ts\"",
+    "typecheck": "node node_modules/typescript/bin/tsc -p tsconfig.build.json",
+    "verify": "npm run test && npm run typecheck"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.2 <0.3",
+    "@deepseek-ai/dsh-llm": ">=0.2 <0.3",
+    "@deepseek-ai/dsh-timeout": ">=0.2 <0.3",
+    "@deepseek-ai/dsh-typert-protocol": ">=0.2 <0.3",
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-llm": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-timeout": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-conversation": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.9.3",
+    "zod": "^4.6.7"
+  }
+}

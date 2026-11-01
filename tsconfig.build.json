@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noCheck": false,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "lib": ["ES2022", "ESNext.Disposable", "DOM", "DOM.Iterable"],
+    "types": []
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts"]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "增强提示词",
+  "enhancing": "增强中...",
+  "revert": "恢复原文",
+  "undoHint": "（请用按钮回滚；手动撤销需按 {steps} 次）",
+  "references": "请先移除引用再增强",
+  "locked": "当前草稿暂不可增强",
+  "error": "error: {code}"
+}

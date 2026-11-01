@@ -1,0 +1,9 @@
+{
+  "title": "Enhance prompt",
+  "enhancing": "Enhancing...",
+  "revert": "Revert to original",
+  "undoHint": " (use this button to revert; manual undo takes {steps} presses)",
+  "references": "Remove file references before enhancing",
+  "locked": "Enhance is unavailable for this draft",
+  "error": "error: {code}"
+}
